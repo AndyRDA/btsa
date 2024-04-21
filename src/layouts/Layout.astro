@@ -17,6 +17,22 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<nav>
+			<div class="logo">
+				<a href="/">
+					<p class="top-line">Build that site</p>
+					<p class="bottom-line">ALREADY!</p>
+				</a>
+			</div>
+			<div class="links">
+				<a href="/" class="nav-link">minimalist</a>
+				<a href="/" class="nav-link">elegant</a>
+				<a href="/" class="nav-link">brutalist</a>
+				<a href="/" class="nav-link">fun</a>
+			</div>
+			<a href="https://cal.com/andycatlow" class="cta">Book an intro call</a>
+
+		</nav>
 		<slot />
 	</body>
 </html>
@@ -32,7 +48,7 @@ const { title } = Astro.props;
 			white 60%
 		);
 
-		--gutter: calc(5vw + 1rem);
+		--gutter: calc(5vw + 16px);
 		--corner: 7px;
 	}
 	*, *::after,*::before{
@@ -48,7 +64,35 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
-		background-size: 224px;
+	}
+
+	nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-inline: var(--gutter);
+		padding-block: 1em;
+		font-size:clamp(16px,calc(1vw + .25rem) ,2em) ;
+		
+		a{
+			text-decoration: none;
+			text-transform: capitalize;
+			color: aliceblue;
+		}
+		.logo{
+			a{
+				color: #ff6600;
+			}
+			.bottom-line{
+				font-size: 1.4em;
+				line-height: .8;
+			}
+		}
+		.links{
+			display: none;
+			/* display: flex; */
+			gap: 1em;
+		}
 	}
 
 </style>

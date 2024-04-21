@@ -142,6 +142,16 @@ import tbhImg from '../assets/projects/tbh.jpg'
 					<p class="testimonial-name">David Lee</p> 
 					<p class="testimonial-company">Ecstatic Entrepreneur</p>
 				</div>
+				<div class="testimonial">
+					<p class="testimonial-body">I needed a website ASAP and buldthatwebsitealready.com delivered! They were fast, efficient, and created a website that perfectly reflects my brand.</p>
+					<p class="testimonial-name">Sarah Jones</p> 
+					<p class="testimonial-company">Happy Client</p>
+				</div>
+				<div class="testimonial">
+					<p class="testimonial-body">Finally found a web designer who speaks my language. They built a website that's not only beautiful but actually converts visitors into customers.</p>
+					<p class="testimonial-name">David Lee</p> 
+					<p class="testimonial-company">Ecstatic Entrepreneur</p>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -162,14 +172,12 @@ import tbhImg from '../assets/projects/tbh.jpg'
 	main {
 		margin: auto;
 		padding: var(--gutter);
-		/* width: 800px; */
-		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}
 	section {
-		padding-block: calc(var(--gutter));
+		padding-block: var(--gutter);
 
 		h2{
 			margin-block: 1em;
@@ -192,6 +200,7 @@ import tbhImg from '../assets/projects/tbh.jpg'
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+		gap: 2em;
 	}
 	.title-blurb {
 		font-size: calc(1vw + 1rem);
@@ -202,10 +211,12 @@ import tbhImg from '../assets/projects/tbh.jpg'
 		color: aliceblue;
 		background-color: blueviolet;
 		padding: 1em 1.5em;
+		border-radius: var(--corner);
 		display: block;
 		max-width: fit-content;
 		height: fit-content;
 		margin-block: 1em;
+		font-size: calc(1vw + .9rem);
 	}
 
 	.card-grid {
@@ -245,9 +256,9 @@ import tbhImg from '../assets/projects/tbh.jpg'
 			font-size: 6em;
 			font-style: italic;
 			top: 0;
-			left: -.4em;
+			left: -.25em;
 			line-height: .5;
-			opacity: 0.4;
+			opacity: 0.1;
 		}
 		.testimonial-name{
 			margin-top: 1em;
