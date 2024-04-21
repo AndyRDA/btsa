@@ -67,7 +67,8 @@ const { title } = Astro.props;
 	}
 
 	nav{
-		position: fixed;
+		position: sticky;
+		top: 0;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -76,7 +77,7 @@ const { title } = Astro.props;
 		padding-block: 1em;
 		font-size:clamp(16px,calc(1vw + .25rem) ,2em) ;
 		background-color: #13151a;
-		
+		z-index: 999;
 		a{
 			text-decoration: none;
 			text-transform: capitalize;
@@ -95,6 +96,11 @@ const { title } = Astro.props;
 			display: none;
 			/* display: flex; */
 			gap: 1em;
+		}
+		.cta{
+			border: 2px solid #ff6600;
+			border-radius: var(--corner);
+			padding: .5em 1em;
 		}
 	}
 

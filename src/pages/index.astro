@@ -161,8 +161,25 @@ import tbhImg from '../assets/projects/tbh.jpg'
 			<p class="bottom-line">ALREADY!</p>
 		</div>
 		<div class="details">
-			<p>letsgo@buildthatsitealready.com</p>
-			
+			<form name="contact" method="POST" data-netlify="true">
+				<div class="floater">
+					<input type="text" name="name" id="name" autocomplete="name" placeholder="Name" required>
+					<label for="name"><p>Name:</p></label>
+				</div>
+				<div class="floater">
+					<input type="email" name="email" id="email" autocomplete="email" placeholder="Email" required>
+					<label for="email"><p>Email:</p></label>
+				</div>
+				<div class="floater">
+					<textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
+					<label for="message"><p>Message:</p></label>
+				</div>
+				<button type="submit">I'm ready!</button>
+			</form>
+			<!-- <div class="myemail">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><rect width="18" height="14" x="3" y="5" stroke-dasharray="64" stroke-dashoffset="64" rx="1"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0"/></rect><path stroke-dasharray="24" stroke-dashoffset="24" d="M3 6.5L12 12L21 6.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.4s" values="24;0"/></path></g></svg>
+				<p>ready@buildthatsitealready.com</p>
+			</div> -->
 		</div>
 	</footer>
 </Layout>
@@ -181,12 +198,18 @@ import tbhImg from '../assets/projects/tbh.jpg'
 	}
 	section {
 		padding-block: var(--gutter);
-		position: sticky;
-		top: 0;
+		/* top: 0; */
 		background-color: #13151a;
-
+		
 		h2{
 			margin-block: 1em;
+		}
+	}
+	@media screen and (min-width: 1000px){
+		section {
+			position:sticky;
+			/* min-height: 120vh; */
+			top:-5rem
 		}
 	}
 	.pre-title {
@@ -281,6 +304,7 @@ import tbhImg from '../assets/projects/tbh.jpg'
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		gap: 2em;
 
 		.top-line {
 			font-size: calc(5vw + 1rem);
@@ -289,6 +313,70 @@ import tbhImg from '../assets/projects/tbh.jpg'
 		.bottom-line {
 			font-size: calc(7vw + 1rem);
 			line-height: 1;
+		}
+		.myemail{
+			margin-block: 2em;
+			display: flex;
+			align-items: center;
+			gap: .5em;
+			svg{
+				height: 1.5em;
+				width: 1.5em;
+			}
+		}
+	}
+	form{
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+		min-width: 300px;
+		font-size: 1.125rem;
+		.floater{
+			position: relative;
+			label{
+				position: absolute;
+				left: .4em;
+				top: .25em;
+				pointer-events: none;
+				transition: translate 200ms ease, color 200ms ease, opacity 100ms ease 50ms;
+				z-index: 1;
+			}
+			input, textarea{
+				padding: 0.5em;
+				display: block;
+				width: 100%;
+				border: none;
+				border-bottom: 2px solid #ff6600;
+				outline: none;
+				font-family: inherit;
+				z-index: 5;
+				&::-webkit-input-placeholder{
+					opacity: 0;
+				}
+				&:focus-visible ~ label {
+					translate: 0 -1.25em;
+					color: #ff6600;
+				}
+				&:focus-visible::-webkit-input-placeholder{
+					opacity: 1;
+				}
+				&:valid:not(:focus-visible) ~ label {
+					opacity: 0;
+				}
+			}
+		}
+		button {
+			border: 2px solid #ff6600;
+			border-radius: var(--corner);
+			max-width: fit-content;
+			padding: .5em 1em;
+			background-color: white;
+			color: #ff6600;
+			transition: all 200ms ease-in-out;
+			&:hover{
+				background-color: #ff6600;
+				color: #fff;
+			}
 		}
 	}
 </style>
