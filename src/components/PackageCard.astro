@@ -1,10 +1,11 @@
 ---
 interface Props {
 	title: string;
-	body: string;
+	price: string;
+	benefits: string[];
 }
 
-const { title, body } = Astro.props;
+const { title, price } = Astro.props;
 ---
 
 <li>
@@ -12,8 +13,11 @@ const { title, body } = Astro.props;
 			{title}
 		</h2>
 		<p>
-			{body}
+			{price}
 		</p>
+		<slot />
+			<!-- {benefits.forEach((item) => <li>{item}</li>)} -->
+		
 </li>
 <style>
 	li {
@@ -41,3 +45,5 @@ const { title, body } = Astro.props;
 	}
 
 </style>
+
+
