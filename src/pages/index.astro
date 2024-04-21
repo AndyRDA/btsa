@@ -9,7 +9,6 @@ import PackageCard from "../components/PackageCard.astro";
 		<p class="pre-title">Tired of waiting?</p>
 		<h1>Build that site Already!</h1>
 		<div class="blurb-wrapper">
-
 			<p class="title-blurb">
 				We get it. You need a website, like yesterday. Stop waiting and get a
 				stunning site that converts - fast.
@@ -106,7 +105,19 @@ import PackageCard from "../components/PackageCard.astro";
 				</div>
 			</div>
 		</section>
+		<section class="portfolio">
+			<h2>Previous Work</h2>
+		</section>
+		<section class="testimonials">
+			<h2>Kind Words</h2>
+		</section>
 	</main>
+	<footer>
+		<div class="site-name">
+			<p class="top-line">Build that site</p>
+			<p class="bottom-line">ALREADY!</p>
+		</div>
+	</footer>
 </Layout>
 
 <style>
@@ -123,7 +134,10 @@ import PackageCard from "../components/PackageCard.astro";
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	.pre-title{
+	section{
+		padding-block: calc(var(--gutter));
+	}
+	.pre-title {
 		font-size: calc(3vw + 1rem);
 		margin-block: 0;
 	}
@@ -134,15 +148,14 @@ import PackageCard from "../components/PackageCard.astro";
 		/* text-align: center; */
 		margin-block: 4rem;
 		color: #ff6600;
-
 	}
-.blurb-wrapper{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-	.title-blurb{
+	.blurb-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.title-blurb {
 		font-size: calc(1vw + 1rem);
 		max-width: 40ch;
 	}
