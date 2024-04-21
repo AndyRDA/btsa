@@ -2,6 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PackageCard from "../components/PackageCard.astro";
+import { Image } from "astro:assets";
+import guideImg from '../assets/projects/Guide.jpg'
+import indecomImg from '../assets/projects/Indecom.jpg'
+import kuezImg from '../assets/projects/kuez.png'
+import tbhImg from '../assets/projects/tbh.jpg'
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,9 +23,9 @@ import PackageCard from "../components/PackageCard.astro";
 		</div>
 	</header>
 	<main>
-		<section class="process">
+		<section class="process-section">
 			<h2>The Process</h2>
-			<ul role="list" class="process-card-grid">
+			<ul role="list" class="process card-grid">
 				<Card
 					title="Discovery"
 					body="First things first, we need to pick your brilliant brain. What's your vision? Your goals? Your wildest web dreams? Don't hold back - we're all ears (and maybe a few screens) during this critical discovery phase."
@@ -38,9 +44,9 @@ import PackageCard from "../components/PackageCard.astro";
 				/>
 			</ul>
 		</section>
-		<section class="packages">
+		<section class="packages-section">
 			<h2>The Packages</h2>
-			<div class="process-card-grid">
+			<div class="packages card-grid">
 				<div class="package-card">
 					<h2>Basic Website</h2>
 					<p>$1,000 - $3,000</p>
@@ -105,11 +111,38 @@ import PackageCard from "../components/PackageCard.astro";
 				</div>
 			</div>
 		</section>
-		<section class="portfolio">
+		<section class="portfolio-section">
 			<h2>Previous Work</h2>
+			<div class="portfolio card-grid">
+				<div class="portfolio-card">
+					<Image src={guideImg} alt="">
+				</div>
+				<div class="portfolio-card">
+					<Image src={indecomImg} alt="">
+				</div>
+				<div class="portfolio-card">
+					<Image src={kuezImg} alt="">
+				</div>
+				<div class="portfolio-card">
+					<Image src={tbhImg} alt="">
+				</div>
+			</div>
 		</section>
-		<section class="testimonials">
+		<section class="testimonials-section">
 			<h2>Kind Words</h2>
+			<div class="testimonials card-grid">
+
+				<div class="testimonial">
+					<p class="testimonial-body">I needed a website ASAP and buldthatwebsitealready.com delivered! They were fast, efficient, and created a website that perfectly reflects my brand.</p>
+					<p class="testimonial-name">Sarah Jones</p> 
+					<p class="testimonial-company">Happy Client</p>
+				</div>
+				<div class="testimonial">
+					<p class="testimonial-body">Finally found a web designer who speaks my language. They built a website that's not only beautiful but actually converts visitors into customers.</p>
+					<p class="testimonial-name">David Lee</p> 
+					<p class="testimonial-company">Ecstatic Entrepreneur</p>
+				</div>
+			</div>
 		</section>
 	</main>
 	<footer>
@@ -117,6 +150,7 @@ import PackageCard from "../components/PackageCard.astro";
 			<p class="top-line">Build that site</p>
 			<p class="bottom-line">ALREADY!</p>
 		</div>
+		<div class="details"></div>
 	</footer>
 </Layout>
 
@@ -134,8 +168,12 @@ import PackageCard from "../components/PackageCard.astro";
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	section{
+	section {
 		padding-block: calc(var(--gutter));
+
+		h2{
+			margin-block: 1em;
+		}
 	}
 	.pre-title {
 		font-size: calc(3vw + 1rem);
@@ -170,7 +208,7 @@ import PackageCard from "../components/PackageCard.astro";
 		margin-block: 1em;
 	}
 
-	.process-card-grid {
+	.card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
@@ -180,8 +218,12 @@ import PackageCard from "../components/PackageCard.astro";
 		list-style: none;
 		outline: 1px solid white;
 		padding: 1em;
+		border-radius: var(--corner);
+
 		display: grid;
 		grid-template-rows: 3em 3em 1fr;
+		gap: 1em;
+
 		h2 {
 			line-height: 1;
 			margin-top: 0;
@@ -191,8 +233,45 @@ import PackageCard from "../components/PackageCard.astro";
 		}
 		ul {
 			list-style: none;
-			margin: 0;
-			padding: 0;
+		}
+	}
+
+	.testimonial{
+		max-width: 30ch;
+		position: relative;
+		&::before{
+			content: '"';
+			position: absolute;
+			font-size: 6em;
+			font-style: italic;
+			top: 0;
+			left: -.4em;
+			line-height: .5;
+			opacity: 0.4;
+		}
+		.testimonial-name{
+			margin-top: 1em;
+			opacity: .8;
+		}
+		.testimonial-company{
+			opacity: .6;
+		}
+	}
+	footer {
+		min-height: 50vh;
+		background-color: #fff;
+		padding: var(--gutter);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.top-line {
+			font-size: calc(5vw + 1rem);
+			line-height: 1;
+		}
+		.bottom-line {
+			font-size: calc(7vw + 1rem);
+			line-height: 1;
 		}
 	}
 </style>

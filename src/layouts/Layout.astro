@@ -33,6 +33,17 @@ const { title } = Astro.props;
 		);
 
 		--gutter: calc(5vw + 1rem);
+		--corner: 7px;
+	}
+	*, *::after,*::before{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
 	}
 	html {
 		font-family: system-ui, sans-serif;
