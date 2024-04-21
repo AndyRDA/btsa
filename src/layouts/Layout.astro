@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Build high-converting, revenue-driving websites with buildTHATsiteALREADY - a bold web development agency laser-focused on maximizing your online sales and growth. Our expert team crafts stunning, custom websites optimized for conversions, SEO, and future scalability." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -67,12 +67,15 @@ const { title } = Astro.props;
 	}
 
 	nav{
+		position: fixed;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
 		padding-inline: var(--gutter);
 		padding-block: 1em;
 		font-size:clamp(16px,calc(1vw + .25rem) ,2em) ;
+		background-color: #13151a;
 		
 		a{
 			text-decoration: none;
