@@ -34,6 +34,29 @@ const { title } = Astro.props;
 
 		</nav>
 		<slot />
+		<footer>
+			<div class="site-name">
+				<p class="top-line">Build that site</p>
+				<p class="bottom-line">ALREADY!</p>
+			</div>
+			<div class="details">
+				<form name="contact" method="POST" data-netlify="true">
+					<div class="floater">
+						<input type="text" name="name" id="name" autocomplete="name" placeholder="Andy Catlow" required>
+						<label for="name"><p>Name:</p></label>
+					</div>
+					<div class="floater">
+						<input type="email" name="email" id="email" autocomplete="email" placeholder="andy@buildthatsitealready.com" required>
+						<label for="email"><p>Email:</p></label>
+					</div>
+					<div class="floater">
+						<textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
+						<label for="message"><p>Message:</p></label>
+					</div>
+					<button type="submit">I'm ready!</button>
+				</form>
+				</div>
+		</footer>
 	</body>
 </html>
 <style is:global>
@@ -104,4 +127,87 @@ const { title } = Astro.props;
 		}
 	}
 
+	/************ footer *************/
+	footer {
+		min-height: 50vh;
+		background-color: #fff;
+		padding: var(--gutter);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 2em;
+
+		.top-line {
+			font-size: calc(5vw + 1rem);
+			line-height: 1;
+		}
+		.bottom-line {
+			font-size: calc(7vw + 1rem);
+			line-height: 1;
+		}
+		.myemail{
+			margin-block: 2em;
+			display: flex;
+			align-items: center;
+			gap: .5em;
+			svg{
+				height: 1.5em;
+				width: 1.5em;
+			}
+		}
+	}
+	form{
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+		min-width: 300px;
+		font-size: 1.125rem;
+		.floater{
+			position: relative;
+			label{
+				position: absolute;
+				left: .4em;
+				top: .25em;
+				pointer-events: none;
+				transition: translate 200ms ease, color 200ms ease, opacity 100ms ease 50ms;
+				z-index: 1;
+			}
+			input, textarea{
+				padding: 0.5em;
+				display: block;
+				width: 100%;
+				border: none;
+				border-bottom: 2px solid #ff6600;
+				outline: none;
+				font-family: inherit;
+				z-index: 5;
+				&::-webkit-input-placeholder, &::placeholder{
+					opacity: 0;
+				}
+				&:focus-visible ~ label {
+					translate: 0 -1.25em;
+					color: #ff6600;
+				}
+				&:focus-visible::-webkit-input-placeholder, &:focus-visible::placeholder{
+					opacity: .5;
+				}
+				&:valid:not(:focus-visible) ~ label {
+					opacity: 0;
+				}
+			}
+		}
+		button {
+			border: 2px solid #ff6600;
+			border-radius: var(--corner);
+			max-width: fit-content;
+			padding: .5em 1em;
+			background-color: white;
+			color: #ff6600;
+			transition: all 200ms ease-in-out;
+			&:hover{
+				background-color: #ff6600;
+				color: #fff;
+			}
+		}
+	}
 </style>
