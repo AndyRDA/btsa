@@ -3,11 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PackageCard from "../components/PackageCard.astro";
 import { Image } from "astro:assets";
-import guideImg from '../assets/projects/Guide.jpg'
-import indecomImg from '../assets/projects/Indecom.jpg'
-import kuezImg from '../assets/projects/kuez.png'
-import tbhImg from '../assets/projects/tbh.jpg'
-
+import guideImg from "../assets/projects/Guide.jpg";
+import indecomImg from "../assets/projects/Indecom.jpg";
+import kuezImg from "../assets/projects/kuez.png";
+import tbhImg from "../assets/projects/tbh.jpg";
 ---
 
 <Layout title="Build That Site Already!">
@@ -19,7 +18,7 @@ import tbhImg from '../assets/projects/tbh.jpg'
 				We get it. You need a website, like yesterday. Stop waiting and get a
 				stunning site that converts - fast.
 			</p>
-			<a href="https://cal.com/andycatlow" class="cta">Book an intro call</a>
+			<a href="https://cal.com/andycatlow" class="btn cta">Book an intro call</a>
 		</div>
 	</header>
 	<main>
@@ -48,23 +47,39 @@ import tbhImg from '../assets/projects/tbh.jpg'
 			<h2>The Packages</h2>
 			<div class="packages card-grid">
 				<div class="package-card">
-					<h2>Basic Website</h2>
-					<p>$1,000 - $3,000</p>
+					<h3>Single Landing Page</h3>
+					<p>$300 +</p>
 					<ul>
+						<li>A stunning, responsive landing page</li>
+						<li>Lead capture options</li>
+						<li>Contact form and / or appointment scheduler</li>
 						<li>
-							Includes a 5-7 page website with a modern, responsive design
+							SEO optimization and analytics integration
 						</li>
+						<li>Great for quick marketing campaigns and lead generation</li>
+					</ul>
+					<a class="btn btn-want">I Want This!</a>
+				</div>
+				<div class="package-card">
+					<h3>5 Page Wesite</h3>
+					<p>$1000 +</p>
+					<ul>
+						<li>A 5 page website with a modern, responsive design</li>
+						<li>A stunning, responsive landing page</li>
+						<li>Lead capture options</li>
+						<li>Contact form and / or appointment scheduler</li>
 						<li>
-							Contact form, basic SEO optimization, and analytics integration
+							SEO optimization and analytics integration
 						</li>
 						<li>
 							Suitable for small businesses, freelancers, or personal brands
 						</li>
 					</ul>
+					<a class="btn btn-want">I Want This!</a>
 				</div>
 				<div class="package-card">
-					<h2>E-Commerce Starter</h2>
-					<p>$2,500 - $5,000</p>
+					<h3>E-Commerce Site</h3>
+					<p>$2,000 - $4,000 +</p>
 					<ul>
 						<li>
 							Includes a basic e-commerce website with 10-20 product pages
@@ -73,29 +88,20 @@ import tbhImg from '../assets/projects/tbh.jpg'
 							Shopping cart, payment gateway integration (e.g., PayPal, Stripe)
 						</li>
 						<li>Customized checkout process and order management system</li>
+						<li>Fully responsive design</li>
+						<li>Lead capture options</li>
+						<li>
+							SEO optimization and analytics integration
+						</li>
 						<li>
 							Ideal for entrepreneurs, small online stores, or sellers launching
 							an MVP
 						</li>
 					</ul>
+					<a class="btn btn-want">I Want This!</a>
 				</div>
-				<div class="package-card">
-					<h2>Lead Generation Website</h2>
-					<p>$2,000 - $4,000</p>
-					<ul>
-						<li>Includes a 5-7 page website with lead capture forms</li>
-						<li>
-							Email marketing integration (e.g., MailChimp, Constant Contact)
-						</li>
-						<li>Landing page design and conversion optimization</li>
-						<li>
-							Suitable for service-based businesses, consultants, or local
-							companies
-						</li>
-					</ul>
-				</div>
-				<div class="package-card">
-					<h2>Website Refresh</h2>
+				<!-- <div class="package-card">
+					<h3>Website Refresh</h3>
 					<p>$1,500 - $3,500</p>
 					<ul>
 						<li>Includes a redesign of an existing website (up to 10 pages)</li>
@@ -108,167 +114,229 @@ import tbhImg from '../assets/projects/tbh.jpg'
 							Ideal for businesses looking to modernize their online presence
 						</li>
 					</ul>
-				</div>
+					<a class="btn btn-want">I Want This!</a>
+
+				</div> -->
 			</div>
+		</section>
+		<section class="subscriptions">
+			<h2>We also offer ongoing support packages</h2>
+			<div class="subs packages card-grid">
+				<div class="package-card sub-card">
+					<h3>Basic</h3>
+					<p class="price">$50 monthly</p>
+					<ul>
+
+						<li>Minor content updates</li>
+						<li>Minor style updates</li>
+						<li>Security checks</li>
+					</ul>
+					<a class="btn btn-want">I Want This!</a>
+
+				</div>
+				<div class="package-card sub-card">
+					<h3>Standard</h3>
+					<p class="price">$100 monthly</p>
+					<ul>
+
+						<li>Content edits</li>
+						<li>SEO maintenance</li>
+						<li>Addition of small features</li>
+					</ul>
+					<a class="btn btn-want">I Want This!</a>
+
+				</div>
+				<div class="package-card sub-card">
+					<h3>Premium</h3>
+					<p class="price">$200 monthly</p>
+					<ul>
+
+						<li>Ongoing marketing support</li>
+						<li>Analytics reporting</li>
+						<li>New content creation</li>
+					</ul>
+					<a class="btn btn-want">I Want This!</a>
+
+				</div>
+
+			</div>
+
 		</section>
 		<section class="portfolio-section">
 			<h2>Previous Work</h2>
 			<div class="portfolio card-grid">
 				<div class="portfolio-card">
-					<Image src={guideImg} alt="">
+					<Image src={guideImg} alt="" />
+					<div class="portfolio-card">
+						<Image src={indecomImg} alt="" />
+						<div class="portfolio-card">
+							<Image src={kuezImg} alt="" />
+							<div class="portfolio-card">
+								<Image src={tbhImg} alt="" />
+							</div>
+						</div>
+						<section class="testimonials-section">
+							<h2>Kind Words</h2>
+							<div class="testimonials card-grid">
+								<div class="testimonial">
+									<p class="testimonial-body">
+										I needed a website ASAP and buldthatwebsitealready.com
+										delivered! They were fast, efficient, and created a website
+										that perfectly reflects my brand.
+									</p>
+									<p class="testimonial-name">Sarah Jones</p>
+									<p class="testimonial-company">Happy Client</p>
+								</div>
+								<div class="testimonial">
+									<p class="testimonial-body">
+										Finally found a web designer who speaks my language. They
+										built a website that's not only beautiful but actually
+										converts visitors into customers.
+									</p>
+									<p class="testimonial-name">David Lee</p>
+									<p class="testimonial-company">Ecstatic Entrepreneur</p>
+								</div>
+								<div class="testimonial">
+									<p class="testimonial-body">
+										I needed a website ASAP and buldthatwebsitealready.com
+										delivered! They were fast, efficient, and created a website
+										that perfectly reflects my brand.
+									</p>
+									<p class="testimonial-name">Sarah Jones</p>
+									<p class="testimonial-company">Happy Client</p>
+								</div>
+								<div class="testimonial">
+									<p class="testimonial-body">
+										Finally found a web designer who speaks my language. They
+										built a website that's not only beautiful but actually
+										converts visitors into customers.
+									</p>
+									<p class="testimonial-name">David Lee</p>
+									<p class="testimonial-company">Ecstatic Entrepreneur</p>
+								</div>
+							</div>
+						</section>
+					</div>
 				</div>
-				<div class="portfolio-card">
-					<Image src={indecomImg} alt="">
-				</div>
-				<div class="portfolio-card">
-					<Image src={kuezImg} alt="">
-				</div>
-				<div class="portfolio-card">
-					<Image src={tbhImg} alt="">
-				</div>
+
+				<style>
+					header {
+						color: aliceblue;
+						padding: var(--gutter);
+					}
+					main {
+						margin: auto;
+						padding: var(--gutter);
+						color: white;
+						font-size: 20px;
+						line-height: 1.6;
+					}
+					section {
+						padding-block: var(--gutter);
+						/* top: 0; */
+						background-color: #13151a;
+
+						h2 {
+							margin-block: 1em;
+						}
+					}
+					.pre-title {
+						font-size: calc(3vw + 1rem);
+						margin-block: 0;
+					}
+					h1 {
+						font-size: calc(10vw + 1rem);
+						font-weight: 700;
+						line-height: 1;
+						/* text-align: center; */
+						margin-block: 4rem;
+						color: #ff6600;
+					}
+					.blurb-wrapper {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						align-items: center;
+						gap: 2em;
+					}
+					.title-blurb {
+						font-size: calc(1vw + 1rem);
+						max-width: 40ch;
+					}
+					.btn {
+						color: var(--btn-clr, aliceblue);
+						background-color: var(--btn-bg-clr, blueviolet);
+						text-decoration: none;
+						padding: .5em 1.5em;
+						border-radius: var(--corner);
+						display: block;
+						max-width: fit-content;
+						height: fit-content;
+						margin-block: 1em;
+						font-size: calc(1vw + 0.5rem);
+						border: 2px solid var(--btn-brdr-clr, transparent);
+					}
+					.cta{
+						/* --btn-clr: aliceblue;
+						--btn-bg-clr: blueviolet; */
+					}
+
+					.card-grid {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+						gap: 2rem;
+						padding: 0;
+					}
+					.package-card {
+						list-style: none;
+						border: 1px solid rgba(255,255,255, .4);
+						padding: 1em;
+						border-radius: var(--corner);
+
+						display: grid;
+						grid-template-rows: 3em 3em 1fr;
+						gap: 1em;
+
+						h2 {
+							line-height: 1;
+							margin-top: 0;
+						}
+						p {
+							font-weight: bold;
+						}
+						ul {
+							list-style-type: "🧱";
+							padding-inline-start: 1em;
+						}
+						.btn-want{
+							/* --btn-brdr-clr: #ff5500; */
+
+						}
+					}
+
+					.testimonial {
+						max-width: 30ch;
+						position: relative;
+						&::before {
+							content: '"';
+							position: absolute;
+							font-size: 6em;
+							font-style: italic;
+							top: 0;
+							left: -0.25em;
+							line-height: 0.5;
+							opacity: 0.1;
+						}
+						.testimonial-name {
+							margin-top: 1em;
+							opacity: 0.8;
+						}
+						.testimonial-company {
+							opacity: 0.6;
+						}
+					}
+				</style>
 			</div>
 		</section>
-		<section class="testimonials-section">
-			<h2>Kind Words</h2>
-			<div class="testimonials card-grid">
-
-				<div class="testimonial">
-					<p class="testimonial-body">I needed a website ASAP and buldthatwebsitealready.com delivered! They were fast, efficient, and created a website that perfectly reflects my brand.</p>
-					<p class="testimonial-name">Sarah Jones</p> 
-					<p class="testimonial-company">Happy Client</p>
-				</div>
-				<div class="testimonial">
-					<p class="testimonial-body">Finally found a web designer who speaks my language. They built a website that's not only beautiful but actually converts visitors into customers.</p>
-					<p class="testimonial-name">David Lee</p> 
-					<p class="testimonial-company">Ecstatic Entrepreneur</p>
-				</div>
-				<div class="testimonial">
-					<p class="testimonial-body">I needed a website ASAP and buldthatwebsitealready.com delivered! They were fast, efficient, and created a website that perfectly reflects my brand.</p>
-					<p class="testimonial-name">Sarah Jones</p> 
-					<p class="testimonial-company">Happy Client</p>
-				</div>
-				<div class="testimonial">
-					<p class="testimonial-body">Finally found a web designer who speaks my language. They built a website that's not only beautiful but actually converts visitors into customers.</p>
-					<p class="testimonial-name">David Lee</p> 
-					<p class="testimonial-company">Ecstatic Entrepreneur</p>
-				</div>
-			</div>
-		</section>
-	</main>
-</Layout>
-
-<style>
-	header {
-		color: aliceblue;
-		padding: var(--gutter);
-	}
-	main {
-		margin: auto;
-		padding: var(--gutter);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	section {
-		padding-block: var(--gutter);
-		/* top: 0; */
-		background-color: #13151a;
-		
-		h2{
-			margin-block: 1em;
-		}
-	}
-	@media screen and (min-width: 1000px){
-		section {
-			position:sticky;
-			/* min-height: 120vh; */
-			top:-5rem
-		}
-	}
-	.pre-title {
-		font-size: calc(3vw + 1rem);
-		margin-block: 0;
-	}
-	h1 {
-		font-size: calc(10vw + 1rem);
-		font-weight: 700;
-		line-height: 1;
-		/* text-align: center; */
-		margin-block: 4rem;
-		color: #ff6600;
-	}
-	.blurb-wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-		gap: 2em;
-	}
-	.title-blurb {
-		font-size: calc(1vw + 1rem);
-		max-width: 40ch;
-	}
-	.cta {
-		text-decoration: none;
-		color: aliceblue;
-		background-color: blueviolet;
-		padding: 1em 1.5em;
-		border-radius: var(--corner);
-		display: block;
-		max-width: fit-content;
-		height: fit-content;
-		margin-block: 1em;
-		font-size: calc(1vw + .9rem);
-	}
-
-	.card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-	.package-card {
-		list-style: none;
-		border: 1px solid white;
-		padding: 1em;
-		border-radius: var(--corner);
-
-		display: grid;
-		grid-template-rows: 3em 3em 1fr;
-		gap: 1em;
-
-		h2 {
-			line-height: 1;
-			margin-top: 0;
-		}
-		p {
-			font-weight: bold;
-		}
-		ul {
-			list-style: none;
-		}
-	}
-
-	.testimonial{
-		max-width: 30ch;
-		position: relative;
-		&::before{
-			content: '"';
-			position: absolute;
-			font-size: 6em;
-			font-style: italic;
-			top: 0;
-			left: -.25em;
-			line-height: .5;
-			opacity: 0.1;
-		}
-		.testimonial-name{
-			margin-top: 1em;
-			opacity: .8;
-		}
-		.testimonial-company{
-			opacity: .6;
-		}
-	}
-	
-</style>
+	</main></Layout
+>
